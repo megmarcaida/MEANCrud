@@ -1,5 +1,5 @@
 //server.js
-//adding opensource modules to application 
+//adding opensource modules to application?
 var express = require('express'); //express
 var path = require('path'); //for refering physical files here
 var logger = require('morgan');
@@ -23,7 +23,7 @@ var authenticate = require('./Routes/authentication')(passport);
 var app = express();
 
 //tell node that My application will use ejs engine for rendering, view engine setup
-app.set('views', path.join(__dirname, 'Views'));
+app.set('views', path.join(__dirname, 'View'));
 app.set('view engine', 'ejs');
 
 //tell node the global configuration about parser,logger and passport
@@ -43,8 +43,8 @@ app.use('/auth', authenticate);
 app.use(express.static(path.join(__dirname, 'scripts')));
 app.use(express.static(path.join(__dirname, 'Content')));
 app.use(express.static(path.join(__dirname, 'angular-app')));
-app.use(express.static(path.join(__dirname, 'Views/Main')));
-app.use(express.static(path.join(__dirname, 'Views/Authentication')));
+app.use(express.static(path.join(__dirname, 'view/Main')));
+app.use(express.static(path.join(__dirname, 'view/Authentication')));
 
 //providing auth-api to passport so that it can use it.
 var initPassport = require('./Passport/passport-init');

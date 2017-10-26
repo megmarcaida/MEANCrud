@@ -6,7 +6,7 @@ var router = express.Router();
 var mongoose = require('mongoose');
 
 router.get('/',function (req,res,next) {
-    res.render('Starter',{title:"Mean App"});
+    res.render('starter',{title:"Mean App"});
 });
 
 module.exports = router;
